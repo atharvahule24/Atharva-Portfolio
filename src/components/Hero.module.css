@@ -1,0 +1,220 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 100px 80px 80px;
+  transition: background 0.4s ease;
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+.bgCanvas {
+  position: absolute;
+  right: 40px;
+  top: 0;
+  width: 55%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+/* ── Heading ──────────────────────────────────────────────── */
+.name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 800;
+  color: #1C1917;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+
+/* ── Tagline ──────────────────────────────────────────────── */
+.tagline {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #44403C;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+/* ── CTAs ─────────────────────────────────────────────────── */
+.ctas {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+/* ── Meta row ─────────────────────────────────────────────── */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.metaTag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #78716C;
+  letter-spacing: 0.5px;
+}
+
+/* Section label */
+.sectionLabel { color: #A8A29E; }
+
+.metaDot {
+  width: 3px;
+  height: 3px;
+  background: #D97706;
+  border-radius: 50%;
+}
+
+/* ── Scroll indicator ─────────────────────────────────────── */
+.scrollIndicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DARK MODE — explicit overrides on the section itself
+   Using both body.dark-mode selector AND :global so both
+   the CSS Module scope and the global toggle work reliably.
+   ══════════════════════════════════════════════════════════ */
+
+/* Dark background on the section */
+:global(body.dark-mode) .hero {
+  background: #0D1117;
+}
+
+/* Heading — bright warm white */
+:global(body.dark-mode) .name {
+  color: #FAF7F2;
+}
+
+/* Tagline */
+:global(body.dark-mode) .tagline {
+  color: #D4CFC8;
+}
+
+/* Meta text */
+:global(body.dark-mode) .metaTag {
+  color: #A8A29E;
+}
+
+/* Section label stays same muted tone */
+:global(body.dark-mode) .sectionLabel {
+  color: #6B7280;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { padding: 100px 20px 60px; }
+  .bgCanvas { width: 100%; opacity: 0.25; }
+  .name { letter-spacing: -1px; }
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .metaDot { display: none; }
+  .statsRow { gap: 20px; flex-wrap: wrap; }
+  .statNumber { font-size: 2rem; }
+}
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+:global(body.dark-mode) .statsRow {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.statNumber {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1C1917;
+  line-height: 1;
+}
+
+:global(body.dark-mode) .statNumber {
+  color: #FAF7F2;
+}
+
+.statLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #78716C;
+}
+
+:global(body.dark-mode) .statLabel {
+  color: #A8A29E;
+}
+
+/* Internship Badge */
+.internBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FEF3C7;
+  color: #D97706;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+:global(body.dark-mode) .internBadge {
+  background: #451A03;
+  color: #FBBF24;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  background: #D97706;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+:global(body.dark-mode) .pulseDot {
+  background: #FBBF24;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(217, 119, 6, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+}

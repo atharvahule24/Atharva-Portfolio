@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" style="background:#F5F0E8;">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap');
+    .title { font-family: 'Cormorant Garamond', serif; font-size: 84px; fill: #1C1917; font-weight: 600; }
+    .subtitle { font-family: 'IBM Plex Mono', monospace; font-size: 32px; fill: #475569; }
+    .node { fill: rgba(28, 25, 23, 0.05); }
+    .link { stroke: rgba(28, 25, 23, 0.05); stroke-width: 2; }
+  </style>
+  
+  <g transform="translate(600, 315)">
+    <!-- Fake neural net -->
+    <path class="link" d="M-400,-150 L-200,0 M-400,150 L-200,0 M-200,0 L0,-150 M-200,0 L0,150 M0,-150 L200,0 M0,150 L200,0 M200,0 L400,-150 M200,0 L400,150"/>
+    <circle class="node" cx="-400" cy="-150" r="16"/>
+    <circle class="node" cx="-400" cy="150" r="16"/>
+    <circle class="node" cx="-200" cy="0" r="24"/>
+    <circle class="node" cx="0" cy="-150" r="24"/>
+    <circle class="node" cx="0" cy="150" r="24"/>
+    <circle class="node" cx="200" cy="0" r="24"/>
+    <circle class="node" cx="400" cy="-150" r="16"/>
+    <circle class="node" cx="400" cy="150" r="16"/>
+  </g>
+
+  <text x="600" y="320" class="title" text-anchor="middle">Atharva Hule</text>
+  <text x="600" y="390" class="subtitle" text-anchor="middle">Computer Science · SPIT · 2026</text>
+</svg>

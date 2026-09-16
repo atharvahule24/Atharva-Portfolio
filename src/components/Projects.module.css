@@ -1,0 +1,277 @@
+.projects {
+  background: #FAF7F2;
+  padding: 120px 0;
+  border-top: 1px solid #D6CFC3;
+  overflow: hidden; /* Prevent horizontal scrollbar on body */
+}
+
+:global(body.dark-mode) .projects {
+  background: #161B22;
+  border-top-color: #2D3748;
+}
+
+.headingWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
+  margin-top: 16px;
+}
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0;
+}
+
+:global(body.dark-mode) .heading { color: #E8E0D0; }
+
+.navButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.navBtn {
+  background: transparent;
+  border: 1px solid #1C1917;
+  color: #1C1917;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 18px;
+}
+
+.navBtn:hover {
+  background: #1C1917;
+  color: #FAF7F2;
+}
+
+:global(body.dark-mode) .navBtn {
+  border-color: #E8E0D0;
+  color: #E8E0D0;
+}
+
+:global(body.dark-mode) .navBtn:hover {
+  background: #E8E0D0;
+  color: #161B22;
+}
+
+.scrollContainer {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 40px;
+  margin-right: -20px; /* To allow slight overflow hint on right */
+  padding-right: 40px; /* Space at end of scroll */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar for a cleaner look */
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+.scrollContainer {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Card */
+.card {
+  flex: 0 0 340px;
+  scroll-snap-align: start;
+  background: #FAF7F2;
+  border: 1px solid #1C1917;
+  padding: 36px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 420px;
+  cursor: pointer;
+}
+
+:global(body.dark-mode) .card {
+  background: #1F2937;
+  border-color: #374151;
+}
+
+.cardHovered {
+  box-shadow: 6px 6px 0 #D97706;
+  transform: translate(-2px, -2px);
+}
+
+:global(body.dark-mode) .cardHovered {
+  box-shadow: 6px 6px 0 #D97706;
+}
+
+/* Signal border animation */
+@keyframes signalRun {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.signalBorder {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  height: 2px;
+  width: 60%;
+  background: linear-gradient(90deg, transparent, #D97706, transparent);
+  animation: signalRun 1.2s linear infinite;
+}
+
+.cardNum {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.inProgressBadge {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background: #FEF3C7;
+  color: #D97706;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+:global(body.dark-mode) .inProgressBadge {
+  background: #451A03;
+  color: #FBBF24;
+}
+
+.cardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+
+:global(body.dark-mode) .cardTitle { color: #E8E0D0; }
+
+.cardSubtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #475569;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.cardDivider {
+  height: 1px;
+  background: #D6CFC3;
+  margin-bottom: 20px;
+}
+
+:global(body.dark-mode) .cardDivider { background: #374151; }
+
+.cardDesc {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+:global(body.dark-mode) .cardDesc { color: #94A3B8; }
+
+.cardTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.techTag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-color: #D6CFC3;
+  color: #475569;
+}
+
+:global(body.dark-mode) .techTag {
+  border-color: #374151;
+  color: #94A3B8;
+}
+
+.linksRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.githubLink, .demoLink {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  text-decoration: none;
+  transition: letter-spacing 0.2s;
+  white-space: nowrap;
+}
+
+.githubLink { color: #D97706; }
+.demoLink { color: #4338CA; }
+
+:global(body.dark-mode) .demoLink { color: #818CF8; }
+
+.githubLink:hover, .demoLink:hover { letter-spacing: 0.5px; }
+
+.detailsLink {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #D97706;
+  text-decoration: none;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.card:hover .detailsLink {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.detailsLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .scrollContainer {
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-right: 0;
+    margin-right: 0;
+    scroll-snap-type: none;
+  }
+  .card {
+    flex: auto;
+    width: 100%;
+    min-height: auto;
+  }
+  .navButtons {
+    display: none;
+  }
+}

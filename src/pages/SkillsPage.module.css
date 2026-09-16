@@ -1,0 +1,134 @@
+.page {
+  min-height: 100vh;
+  background: #F5F0E8;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+:global(body.dark-mode) .page { background: #0D1117; }
+
+.bgWrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 48px 40px 120px;
+}
+
+.back {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #78716C;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.back:hover { color: #D97706; }
+:global(body.dark-mode) .back { color: #6B7280; }
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  color: #1C1917;
+  line-height: 1.0;
+  letter-spacing: -1.5px;
+  margin: 12px 0 0;
+}
+:global(body.dark-mode) .heading { color: #FAF7F2; }
+
+.subheading {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #78716C;
+  margin: 16px 0 56px;
+}
+:global(body.dark-mode) .subheading { color: #6B7280; }
+
+/* 2×2 group grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.group {
+  background: #FAF7F2;
+  border: 1px solid #D6CFC3;
+  padding: 36px 32px 40px;
+  transition: box-shadow 0.2s;
+}
+.group:hover { box-shadow: 4px 4px 0 rgba(217,119,6,0.15); }
+:global(body.dark-mode) .group {
+  background: #161B22;
+  border-color: #2D3748;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.groupIcon {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.groupLabel {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0;
+  flex: 1;
+}
+:global(body.dark-mode) .groupLabel { color: #E8E0D0; }
+
+.groupLine {
+  height: 2px;
+  width: 32px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #44403C;
+  border: 1px solid #D6CFC3;
+  padding: 7px 14px;
+  cursor: default;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  display: inline-block;
+}
+:global(body.dark-mode) .chip {
+  color: #9CA3AF;
+  border-color: #374151;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .inner { padding: 40px 20px 80px; }
+}

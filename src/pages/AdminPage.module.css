@@ -1,0 +1,286 @@
+.adminWrap {
+  padding: 100px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: 'Inter', sans-serif;
+  color: var(--charcoal);
+  min-height: 100vh;
+}
+
+:global(body.dark-mode) .adminWrap {
+  color: var(--cream);
+}
+
+.loginWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--cream);
+}
+
+:global(body.dark-mode) .loginWrapper {
+  background: var(--dark-navy);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+:global(body.dark-mode) .loginForm {
+  background: #1e293b;
+}
+
+.loginForm input {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.loginForm button {
+  padding: 10px;
+  background: var(--amber);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--border);
+}
+
+.tabs button {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.6;
+}
+
+.tabs button.active {
+  opacity: 1;
+  border-bottom: 2px solid var(--amber);
+  margin-bottom: -2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+  background: rgba(0,0,0,0.02);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+:global(body.dark-mode) .form {
+  background: rgba(255,255,255,0.05);
+}
+
+.form input, .form textarea, .form select {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+.form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form button {
+  padding: 10px;
+  background: var(--amber);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(0,0,0,0.02);
+  border-radius: 4px;
+}
+
+:global(body.dark-mode) .list li {
+  background: rgba(255,255,255,0.05);
+}
+
+.list button {
+  padding: 6px 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addBtn {
+  background-color: var(--amber) !important;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.successFlash {
+  background-color: #10b981;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.cancelBtn {
+  background-color: #6b7280 !important;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dangerBtn {
+  background-color: #ef4444 !important;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.editBtn {
+  background-color: #3b82f6 !important;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.iconBtn {
+  background: none !important;
+  border: 1px solid var(--border) !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+  color: inherit !important;
+}
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.confirmDelete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(239, 68, 68, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ef4444;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.05);
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  margin: 4px;
+}
+:global(body.dark-mode) .pill {
+  background: rgba(255,255,255,0.1);
+}
+.pillClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0.5;
+}
+.pillClose:hover { opacity: 1; }
+.grid2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .grid2x2 { grid-template-columns: 1fr; }
+}
+.skillCard {
+  background: rgba(0,0,0,0.02);
+  padding: 16px;
+  border-radius: 8px;
+}
+:global(body.dark-mode) .skillCard {
+  background: rgba(255,255,255,0.05);
+}
+.pillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.skillPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--border);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+.statusBadge {
+  background: var(--amber);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}

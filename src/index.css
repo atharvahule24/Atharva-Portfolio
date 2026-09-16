@@ -1,0 +1,231 @@
+/* ============================================================
+   /* DESIGN SYSTEM — Atharva Hule */
+   /* Warm Researcher's Notebook Aesthetic */
+   /* ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --cream: #F5F0E8;
+  --off-white: #FAF7F2;
+  --charcoal: #1C1917;
+  --amber: #D97706;
+  --indigo: #4338CA;
+  --slate: #475569;
+  --border: #D6CFC3;
+  --border-light: #E8E0D0;
+  --surface-mid: #EDE8DF;
+  --skill-card-glow: rgba(217, 119, 6, 0.12);
+
+  /* Dark mode colors */
+  --dark-bg: #0D1117;
+  --dark-surface: #161B22;
+  --dark-surface2: #1F2937;
+  --dark-text: #E8E0D0;
+  --dark-muted: #94A3B8;
+  --dark-border: #2D3748;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lora', 'Georgia', serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --max-width: 1200px;
+  --section-padding: 120px 80px;
+  --nav-height: 64px;
+
+  /* Documentation Theming Variables */
+  --readme-bg: #FDFAF6;
+  --readme-border: #DDD6CC;
+  --readme-text-p: #44403C;
+  --readme-text-h: #1C1917;
+  --readme-surface-inline: #F5F0E8;
+  --readme-border-table: #DDD6CC;
+}
+
+/* Custom cursor */
+* {
+  cursor: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  --cream: var(--dark-bg);
+  --off-white: var(--dark-surface);
+  --charcoal: var(--dark-text);
+  --border: var(--dark-border);
+  --border-light: var(--dark-border);
+  --surface-mid: var(--dark-surface2);
+  --slate: var(--dark-muted);
+  --skill-card-glow: rgba(217, 119, 6, 0.08);
+
+  /* Documentation Dark Mode Overrides */
+  --readme-bg: #0F172A;
+  --readme-border: #1E293B;
+  --readme-text-p: #CBD5E1;
+  --readme-text-h: #FAF7F2;
+  --readme-surface-inline: #1E293B;
+  --readme-border-table: #334155;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--amber); }
+
+/* Typography base — color intentionally omitted here;
+   each component CSS module controls its own text color
+   to prevent specificity conflicts with dark-mode overrides. */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+p { font-family: var(--font-body); }
+code, .mono { font-family: var(--font-mono); }
+
+/* Selection */
+::selection {
+  background: var(--amber);
+  color: var(--off-white);
+}
+
+/* Section label style */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 20px;
+  display: block;
+  font-weight: 600;
+}
+
+/* Tag chip style */
+.tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 5px 12px;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+  background: transparent;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tag:hover {
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+body.dark-mode .tag {
+  border-color: var(--dark-text);
+  color: var(--dark-text);
+}
+
+body.dark-mode .tag:hover {
+  background: rgba(217, 119, 6, 0.15);
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+/* Button styles */
+.btn-primary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 14px 28px;
+  background: var(--amber);
+  color: var(--off-white);
+  border: none;
+  border-radius: 0;
+  cursor: none;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 13px 28px;
+  background: transparent;
+  color: var(--charcoal);
+  border: 1px solid var(--charcoal);
+  border-radius: 0;
+  cursor: none;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--charcoal);
+  color: var(--off-white);
+  transform: translateY(-1px);
+}
+
+body.dark-mode .btn-secondary {
+  color: var(--dark-text);
+  border-color: var(--dark-text);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background: var(--dark-text);
+  color: var(--dark-bg);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  :root { --section-padding: 80px 20px; }
+}

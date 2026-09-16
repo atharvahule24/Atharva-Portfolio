@@ -1,0 +1,54 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  background: #F5F0E8;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.nameContainer {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(38px, 10vw, 88px);
+  font-weight: 800;
+  color: #1C1917;
+  letter-spacing: -1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: 0.3em; /* Space between words when inline */
+  row-gap: 0.1em;    /* Space between words when stacked */
+  user-select: none;
+  max-width: 100%;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.word {
+  display: inline-flex;
+  white-space: nowrap; /* Keep each word on its own line unless explicitly wrapping that container */
+}
+
+.letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.sub {
+  margin-top: 20px;
+  color: #475569;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .nameContainer {
+    font-size: clamp(32px, 12vw, 52px);
+    flex-direction: column; /* Stack the name words vertically for optimal impact on very small screens */
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

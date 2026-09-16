@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://portfolio-nine-ecru-35.vercel.app/sitemap.xml

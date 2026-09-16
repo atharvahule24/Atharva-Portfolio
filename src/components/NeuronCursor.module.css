@@ -1,0 +1,28 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+@keyframes pulse {
+  0%   { r: 10; opacity: 0.3; }
+  100% { r: 22; opacity: 0; }
+}
+
+@keyframes flash {
+  0%   { r: 6; opacity: 1; }
+  100% { r: 22; opacity: 0; }
+}
+
+.pulse {
+  animation: pulse 0.6s ease-out forwards;
+}
+
+.flash {
+  animation: flash 0.4s ease-out forwards;
+}

@@ -1,0 +1,355 @@
+.container {
+  min-height: 100vh;
+  background: #F5F0E8;
+  padding: 120px 24px 60px;
+}
+
+:global(body.dark-mode) .container {
+  background: #0A0F1E;
+}
+
+.inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.backBtn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #475569;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+:global(body.dark-mode) .backBtn {
+  color: #94A3B8;
+}
+
+.backBtn:hover {
+  color: #D97706;
+}
+
+.sectionLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
+:global(body.dark-mode) .sectionLabel {
+  color: #94A3B8;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  color: #1C1917;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
+
+:global(body.dark-mode) .title {
+  color: #E8E0D0;
+}
+
+.num {
+  color: #D97706;
+}
+
+.subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+:global(body.dark-mode) .subtitle {
+  color: #94A3B8;
+}
+
+.statusBadgeWrapper {
+  margin-bottom: 32px;
+}
+
+.badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badgeLive {
+  background: #D1FAE5;
+  color: #059669;
+}
+
+.badgeProgress {
+  background: #FEF3C7;
+  color: #D97706;
+}
+
+:global(body.dark-mode) .badgeLive {
+  background: #064E3B;
+  color: #34D399;
+}
+
+:global(body.dark-mode) .badgeProgress {
+  background: #451A03;
+  color: #FBBF24;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.btnOutline {
+  border: 1px solid #1C1917;
+  color: #1C1917;
+  padding: 12px 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+:global(body.dark-mode) .btnOutline {
+  border-color: #E8E0D0;
+  color: #E8E0D0;
+}
+
+.btnOutline:hover {
+  background: #1C1917;
+  color: #FFFFFF;
+}
+
+:global(body.dark-mode) .btnOutline:hover {
+  background: #E8E0D0;
+  color: #0A0F1E;
+}
+
+.btnFilled {
+  background: #D97706;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  border: 1px solid #D97706;
+}
+
+.btnFilled:hover {
+  opacity: 0.9;
+}
+
+.divider {
+  height: 1px;
+  background: #D6CFC3;
+  margin-bottom: 40px;
+}
+
+:global(body.dark-mode) .divider {
+  background: #2D3748;
+}
+
+.description {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #44403C;
+  margin-bottom: 60px;
+}
+
+:global(body.dark-mode) .description {
+  color: #CBD5E1;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+:global(body.dark-mode) .label {
+  color: #94A3B8;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bulletItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.bulletArrow {
+  color: #D97706;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 2px;
+}
+
+.bulletText {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #44403C;
+}
+
+:global(body.dark-mode) .bulletText {
+  color: #CBD5E1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.techPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid #1C1917;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #1C1917;
+}
+
+:global(body.dark-mode) .techPill {
+  background: #1F2937;
+  border-color: #374151;
+  color: #E8E0D0;
+}
+
+.techIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 1px solid #D6CFC3;
+  padding-left: 20px;
+  margin-left: 8px;
+}
+
+:global(body.dark-mode) .timeline {
+  border-color: #374151;
+}
+
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.msDone, .msProgress, .msPlanned {
+  position: absolute;
+  left: -28px;
+  font-size: 16px;
+  background: #F5F0E8;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+:global(body.dark-mode) .msDone, 
+:global(body.dark-mode) .msProgress, 
+:global(body.dark-mode) .msPlanned {
+  background: #0A0F1E;
+}
+
+.msDone { color: #059669; }
+.msProgress { color: #D97706; animation: pulseDot 2s infinite; }
+.msPlanned { color: #94A3B8; font-size: 14px; }
+
+@keyframes pulseDot {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.msLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+}
+
+.msLabel_done { color: #1C1917; }
+.msLabel_in_progress { color: #D97706; }
+.msLabel_planned { color: #475569; }
+
+:global(body.dark-mode) .msLabel_done { color: #E8E0D0; }
+:global(body.dark-mode) .msLabel_planned { color: #94A3B8; }
+
+.lessons {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #44403C;
+  border-left: 3px solid #D97706;
+  padding-left: 16px;
+}
+
+:global(body.dark-mode) .lessons {
+  color: #CBD5E1;
+}
+
+.statsRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.statBox {
+  background: #FFFBF2;
+  border: 1px solid #D6CFC3;
+  padding: 12px 16px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: #1C1917;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+:global(body.dark-mode) .statBox {
+  background: #111827;
+  border-color: #374151;
+  color: #E8E0D0;
+}
+
+.statIcon {
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .title { font-size: 36px; }
+  .actions { flex-direction: column; }
+  .btnOutline, .btnFilled { text-align: center; }
+  .statsRow { flex-direction: column; }
+}

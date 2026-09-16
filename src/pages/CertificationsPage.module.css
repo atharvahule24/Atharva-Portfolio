@@ -1,0 +1,189 @@
+.page {
+  min-height: 100vh;
+  background: #FAF7F2;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+:global(body.dark-mode) .page { background: #0D1117; }
+
+.bgWrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.28;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 40px 120px;
+}
+
+.back {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #78716C;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.back:hover { color: #D97706; }
+:global(body.dark-mode) .back { color: #6B7280; }
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  color: #1C1917;
+  line-height: 1.0;
+  letter-spacing: -1.5px;
+  margin: 12px 0 0;
+}
+:global(body.dark-mode) .heading { color: #FAF7F2; }
+
+.subheading {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #78716C;
+  margin: 16px 0 56px;
+}
+:global(body.dark-mode) .subheading { color: #6B7280; }
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  background: #FAF7F2;
+  border: 1px solid #D6CFC3;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: 6px 6px 0 rgba(217,119,6,0.18);
+  transform: translate(-1px, -1px);
+}
+:global(body.dark-mode) .card {
+  background: #161B22;
+  border-color: #2D3748;
+}
+
+/* Colored top accent bar */
+.accentBar {
+  height: 3px;
+  width: 100%;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 36px 40px 24px;
+}
+
+.badgeWrap {
+  width: 64px;
+  height: 64px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.badgeIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.certMeta { flex: 1; }
+
+.certIssuer {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #78716C;
+  margin-bottom: 6px;
+}
+:global(body.dark-mode) .certIssuer { color: #6B7280; }
+
+.certName {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0 0 8px;
+}
+:global(body.dark-mode) .certName { color: #E8E0D0; }
+
+.certYear {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #A8A29E;
+}
+
+.divider {
+  height: 1px;
+  background: #D6CFC3;
+  margin: 0 40px;
+}
+:global(body.dark-mode) .divider { background: #2D3748; }
+
+.certDesc {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #44403C;
+  padding: 24px 40px 0;
+}
+:global(body.dark-mode) .certDesc { color: #9CA3AF; }
+
+.certSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 40px 0;
+}
+
+.skillTag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #78716C;
+  border: 1px solid var(--cert-color, #D6CFC3);
+  padding: 5px 12px;
+  opacity: 0.85;
+}
+:global(body.dark-mode) .skillTag { color: #9CA3AF; }
+
+.verifyLink {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 24px 40px 36px;
+  transition: letter-spacing 0.2s, opacity 0.2s;
+  opacity: 0.85;
+}
+.verifyLink:hover { letter-spacing: 0.5px; opacity: 1; }
+
+@media (max-width: 640px) {
+  .inner { padding: 40px 20px 80px; }
+  .cardTop { padding: 28px 24px 20px; flex-direction: column; }
+  .divider { margin: 0 24px; }
+  .certDesc { padding: 20px 24px 0; }
+  .certSkills { padding: 16px 24px 0; }
+  .verifyLink { margin: 20px 24px 28px; }
+}

@@ -1,0 +1,145 @@
+.certs {
+  background: #F5F0E8;
+  padding: 120px 0;
+  border-top: 1px solid #D6CFC3;
+}
+
+:global(body.dark-mode) .certs {
+  background: #0D1117;
+  border-top-color: #2D3748;
+}
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 52px;
+  margin-top: 16px;
+}
+
+:global(body.dark-mode) .heading { color: #E8E0D0; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.certItem {
+  border-bottom: 1px solid #D6CFC3;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+:global(body.dark-mode) .certItem { border-bottom-color: #2D3748; }
+
+.certItem:first-child { border-top: 1px solid #D6CFC3; }
+:global(body.dark-mode) .certItem:first-child { border-top-color: #2D3748; }
+
+.certItem:hover { background: rgba(217, 119, 6, 0.04); }
+
+.certRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 28px 0;
+}
+
+.certInfo { flex: 1; }
+
+.certIssuer {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #475569;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+:global(body.dark-mode) .certIssuer { color: #94A3B8; }
+
+.certName {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1C1917;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+:global(body.dark-mode) .certName { color: #E8E0D0; }
+
+.expandIcon {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  color: #D97706;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.expandedIcon {
+  transform: rotate(180deg);
+}
+
+.certYear {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: #475569;
+  flex-shrink: 0;
+}
+
+:global(body.dark-mode) .certYear { color: #94A3B8; }
+
+.certDetails {
+  padding-bottom: 28px;
+  color: #44403C;
+}
+
+:global(body.dark-mode) .certDetails { color: #D4CFC8; }
+
+.certDesc {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.certTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  padding: 4px 10px;
+  border: 1px solid #D6CFC3;
+  color: #475569;
+}
+
+:global(body.dark-mode) .tag {
+  border-color: #374151;
+  color: #94A3B8;
+}
+
+.verifyLink {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #D97706;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.verifyLink:hover { opacity: 0.8; }
+
+@media (max-width: 640px) {
+  .certName { font-size: 18px; }
+}
